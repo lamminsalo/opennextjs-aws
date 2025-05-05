@@ -1,9 +1,9 @@
+import type querystring from "node:querystring";
 import type {
   GetServerSidePropsContext,
   InferGetServerSidePropsType,
   PreviewData,
 } from "next";
-import type querystring from "node:querystring";
 
 export async function getServerSideProps(
   context: GetServerSidePropsContext<querystring.ParsedUrlQuery, PreviewData>,

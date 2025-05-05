@@ -26,7 +26,10 @@ const nextConfig: NextConfig = {
   ],
   rewrites: async () => [
     { source: "/rewrite", destination: "/", locale: false },
-    { source: "/rewriteWithQuery", destination: "/api/query?q=1" },
+    {
+      source: "/rewriteWithQuery",
+      destination: "/api/query?q=äöå1",
+    },
     {
       source: "/rewriteUsingQuery",
       destination: "/:destination/",
@@ -55,6 +58,16 @@ const nextConfig: NextConfig = {
     {
       source: "/redirect-with-locale/",
       destination: "/ssr/",
+      permanent: false,
+    },
+    {
+      source: "/search1",
+      destination: "/search",
+      permanent: true,
+    },
+    {
+      source: "/search2",
+      destination: "/search",
       permanent: false,
     },
   ],
